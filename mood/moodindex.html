@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mood Tracker - Tranquil</title>
+
+  <!-- Fonts & Tailwind CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="font-[Poppins] bg-[#FBF8FB] text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-[#B2183A]">Tranquil</h1>
+      <nav class="space-x-6">
+        <a href="../index.html#home" class="hover:text-[#ED4A69] font-medium">HOME</a>
+        <a href="../index.html#features" class="hover:text-[#ED4A69] font-medium">FEATURES</a>
+        <a href="../index.html#about" class="hover:text-[#ED4A69] font-medium">ABOUT</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mood Tracker Content -->
+  <main class="pt-32 px-6 max-w-4xl mx-auto">
+    <h2 class="text-4xl font-bold text-[#B2183A] mb-6">Mood Tracker</h2>
+    <p class="mb-8 text-lg">
+      How are you feeling today? Select your mood and reflect on your day. Tranquil helps you identify emotional patterns and trends over time.
+    </p>
+
+    <!-- Placeholder Mood Options -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="mood-btn bg-white p-6 rounded-lg shadow hover:shadow-md text-center cursor-pointer hover:bg-[#fdf4f7] transition" data-mood="Happy">
+        😊<br/>
+        <span class="block mt-2">Happy</span>
+      </div>
+      <div class="mood-btn bg-white p-6 rounded-lg shadow hover:shadow-md text-center cursor-pointer hover:bg-[#fdf4f7] transition" data-mood="Sad">
+        😔<br/>
+        <span class="block mt-2">Sad</span>
+      </div>
+      <div class="mood-btn bg-white p-6 rounded-lg shadow hover:shadow-md text-center cursor-pointer hover:bg-[#fdf4f7] transition" data-mood="Angry">
+        😠<br/>
+        <span class="block mt-2">Angry</span>
+      </div>
+      <div class="mood-btn bg-white p-6 rounded-lg shadow hover:shadow-md text-center cursor-pointer hover:bg-[#fdf4f7] transition" data-mood="Calm">
+        😌<br/>
+        <span class="block mt-2">Calm</span>
+      </div>      
+    </div>
+
+<!-- Mood History -->
+<section class="mt-10">
+  <h3 class="text-2xl font-semibold mb-4 text-[#B2183A]">Mood History</h3>
+
+  <div id="mood-log" class="bg-white p-4 rounded-lg shadow-md max-h-64 overflow-y-auto text-sm text-left">
+    <p>No mood entries yet.</p>
+  </div>
+
+  <!-- Clear Button -->
+  <div class="text-center mt-10">
+    <button id="clear-history" class="bg-[#B2183A] hover:bg-[#ED4A69] text-black font-medium py-2 px-4 rounded shadow-lg transition duration-300">
+      Clear Mood History
+    </button>
+  </div>
+</section>
+  </main>
+  <br><br>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm py-8 mt-12 text-gray-500">
+    &copy; 2025 Tranquil. All rights reserved.
+  </footer>
+  <script src="mood.js" defer></script>
+
+
+</body>
+</html>
