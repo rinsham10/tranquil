@@ -40,7 +40,7 @@
   }
   
   .mood-btn.bg-white:hover {
-    background-color: #fdf4f7;
+    background-color: #edd7df;
   }
   
   .mood-btn .icon {
@@ -69,6 +69,51 @@
     background-color: #ed4a6892;
     color: white;
   }
+  
+  /* Mood Calendar Section */
+#mood-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  padding: 1rem;
+  background: #FBF8FB;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Each mood box in the calendar */
+.mood-box {
+  padding: 0.6rem 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 0.75rem;
+  color: #333;
+  background-color: #f0f0f0;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.04);
+}
+
+.mood-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 3px 6px 10px rgba(0,0,0,0.1);
+}
+
+/* Mood Colors */
+.mood-happy {
+  background-color: #fde68a; /* Yellow */
+}
+.mood-sad {
+  background-color: #bfdbfe; /* Blue */
+}
+.mood-angry {
+  background-color: #fca5a5; /* Red */
+}
+.mood-calm {
+  background-color: #a7f3d0; /* Green */
+}
+
 
   /* Mood Colors */
 .mood-happy {
