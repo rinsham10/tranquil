@@ -1,0 +1,96 @@
+/* Overlay background for mood tracker section */
+.mood-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom right, #FBB3C8, #FBF8FB);
+    opacity: 0.08;
+    z-index: 1;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FBF8FB;
+    margin: 0;
+  }
+  
+  .mood-btn {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .mood-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 20px rgba(237, 74, 105, 0.1);
+  }
+  
+  .mood-btn span {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #000;
+    margin-top: 10px;
+  }
+  
+  .mood-btn p {
+    font-size: 1.25rem;
+    color: #000;
+  }
+  
+  .mood-btn.bg-white {
+    background-color: white;
+  }
+  
+  .mood-btn.bg-white:hover {
+    background-color: #fdf4f7;
+  }
+  
+  .mood-btn .icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Mood History Section */
+  #history-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #B2183A;
+  }
+  
+  #clear-history {
+    background-color: #B2183A;
+    color: black;
+    font-weight: medium;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  #clear-history:hover {
+    background-color: #ED4A69;
+    color: white;
+  }
+  
+  /* Scrollbar customizations */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #efe8ea;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #d479a66a;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    position: relative;
+    z-index: 10;
+    font-size: 0.95rem;
+  }
+  
+  footer p {
+    color: #3F1A2B;
+  }
+  
