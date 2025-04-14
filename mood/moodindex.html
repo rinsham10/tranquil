@@ -16,6 +16,11 @@
 
 <body class="font-[Poppins] bg-[#FBF8FB] text-gray-800">
 
+  <!-- Background Decorative Elements -->
+  <div class="background-decor blob1"></div>
+  <div class="background-decor blob2"></div>
+  <div class="background-decor blob3"></div>
+
   <!-- Header -->
   <header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -55,46 +60,38 @@
       </div>
     </div>
 
-     <!-- Mood Recommendation -->
-     <section class="mt-10">
+    <!-- Mood Recommendation -->
+    <section class="mt-10">
       <h3 class="text-2xl font-semibold mb-4 text-[#B2183A]">Mood Recommendation</h3>
       <div id="mood-recommendation" class="bg-white p-4 rounded-lg shadow-md text-sm text-left">
         <p>Select a mood to get a recommendation!</p>
       </div>
     </section>
 
-<!-- Mood Calendar -->
-<section class="mt-16">
-  <h3 class="text-2xl font-semibold mb-4 text-[#B2183A]">Mood Calendar</h3>
-  <div id="mood-calendar" class="grid grid-cols-7 gap-2 text-sm sm:text-xs md:text-sm">
-    <!-- Calendar boxes will be injected here -->
-  </div>
-</section>
-
+    <!-- Mood Calendar -->
+    <section class="mt-16">
+      <h3 class="text-2xl font-semibold mb-4 text-[#B2183A]">Mood Calendar</h3>
+      <div id="mood-calendar" class="grid grid-cols-7 gap-2 text-sm sm:text-xs md:text-sm">
+        <!-- Calendar boxes will be injected here -->
+      </div>
+    </section>
 
     <!-- Mood History -->
     <section class="mt-10">
       <h3 class="text-2xl font-semibold mb-4 text-[#B2183A]">Mood History</h3>
-    
       <div id="mood-log" class="bg-white p-4 rounded-lg shadow-md max-h-40 overflow-y-auto text-sm text-left">
         <p>No mood entries yet.</p>
       </div>
     </section>
-    
 
-      <!-- Clear Button -->
-      <div class="text-center mt-10">
-        <button id="clear-history" class="bg-[#B2183A] hover:bg-[#ED4A69] text-black font-medium py-2 px-4 rounded shadow-lg transition duration-300">
-          Clear Mood History
-        </button>
-      </div>
-    </section>
+    <!-- Clear Button -->
+    <div class="text-center mt-10">
+      <button id="clear-history" class="bg-[#B2183A] hover:bg-[#ED4A69] text-black font-medium py-2 px-4 rounded shadow-lg transition duration-300">
+        Clear Mood History
+      </button>
+    </div>
 
-
-
-  
   </main>
-  <br><br>
 
   <!-- Footer -->
   <footer class="text-center text-sm py-8 mt-12 text-gray-500">

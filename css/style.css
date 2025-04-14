@@ -1,115 +1,242 @@
 /* Overlay background for hero section */
 .home::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom right, #FBB3C8, #FBF8FB);
-    opacity: 0.08; /* lower opacity for less white overlay */
-    z-index: 1;
-  }
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, #FBB3C8, #FBF8FB);
+  opacity: 0.08; /* lower opacity for less white overlay */
+  z-index: 1;
+}
 
-  
+/* Scrollbar Customization */
 ::-webkit-scrollbar {
-    width: 12px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background-color: #efe8ea;
-  }
-  
-  
-  body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #FBF8FB;
-  }
-  
-  /* Ensures hero content stays above overlay */
-  .home > * {
-    z-index: 10;
-    text-shadow: 3px 3px 8px rgba(255, 0, 0, 0.3);
-    position: relative;
-  }
-  
-  /* Hero image sizing (full screen) */
-  .home {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    min-height: 600px;
-  }
-  
-  
-  /* Feature card styling */
-  .feature-card-link {
-    text-decoration: none;
-  }
-  
-  .feature-card {
-    background-color: white;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.05);
-    border-left: 6px solid #FBB3C8;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
-  }
-  
-  .feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 8px 8px 20px rgba(237, 74, 105, 0.1);
-  }
-  
-  .feature-card h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #000000;
-    margin-bottom: 0.75rem;
-  }
-  
-  .feature-card p {
-    font-size: 1rem;
-    color: #000000;
-    line-height: 1.6;
-  }
-  
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F5F5;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #B2183A;
+  border-radius: 10px;
+}
+
+/* Body and Font */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #FBF8FB;
+  text-align: center;
+}
+
+/* Navbar Styling */
+nav a {
+  position: relative;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+nav a::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #B2183A;
+  bottom: 0;
+  left: 50%;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav a:hover {
+  color: #B2183A;
+}
+
+nav a:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+/* Hero Section Animation */
+.home h1, .home p {
+  animation: fadeInUp 1.5s ease-out forwards;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+@keyframes fadeInUp {
+  to {
       opacity: 1;
       transform: translateY(0);
-    }
   }
-  
-  footer {
-    background-color: #d479a66a;
-    color: white;
-    text-align: center;
-    padding: 1.5rem 1rem;
-    position: relative;
-    z-index: 10;
-    font-size: 0.95rem;
+}
+
+/* Ensures hero content stays above overlay */
+.home > * {
+  z-index: 10;
+  text-shadow: 3px 3px 8px rgba(255, 0, 0, 0.3);
+  position: relative;
+}
+
+/* Hero image sizing (full screen) */
+.home {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  min-height: 600px;
+}
+
+/* Feature Cards */
+.feature-card-link {
+  text-decoration: none;
+}
+
+.feature-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.05);
+  border-left: 6px solid #FBB3C8;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.7s forwards;
+}
+
+.feature-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.feature-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.feature-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.feature-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(237, 74, 105, 0.2);
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: #000000;
+  line-height: 1.6;
+}
+
+/* Smooth Scroll to Anchors */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Footer */
+footer {
+  background-color: #d479a66a;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  position: relative;
+  z-index: 10;
+  font-size: 0.95rem;
+}
+
+footer p {
+  color: #3F1A2B;
+}
+
+/* Footer Social Icons Hover Effect */
+.contact-info a {
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #ED4A69;
+}
+
+/* Hero Section Button Hover Effect */
+.cta-btn {
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  transform: scale(1.1);
+  background-color: #ED4A69;
+}
+
+/* Image Zoom Effect on Hover */
+#detailed-features img {
+  transition: transform 0.3s ease;
+}
+
+#detailed-features img:hover {
+  transform: scale(1.1);
+}
+
+/* Smooth Animation for Detailed Features */
+#detailed-features .grid img {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+      opacity: 1;
+      transform: translateY(0);
   }
-  footer p {
-    color: #3F1A2B;
-  }
-  
-  
-.contact-info {
-    text-align: center;  /* Center align the text */
-  }
-  
-  .contact-info p {
-    font-size: 1rem;  /* Adjust the font size */
-    font-weight: bold;  /* Make it bold if needed */
-  }
-  
-  .contact-info .email {
-    font-size: 1rem;  /* Increase size of email specifically */
-    text-transform: lowercase;  /* Ensure email is in lowercase */
-  }
-  
+}
+
+/* Call-to-Action Button Animation */
+.cta-btn {
+  background-color: #B2183A;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 1.125rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.cta-btn:hover {
+  background-color: #ED4A69;
+  transform: scale(1.1);
+}
+
+/* Text and Font Styling for Sections */
+section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #B2183A;
+}
+
+section p {
+  font-size: 1rem;
+  color: #3F1A2B;
+  line-height: 1.6;
+}
+
+section {
+  margin-top: 40px;
+  padding: 40px;
+  border-radius: 12px;
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
