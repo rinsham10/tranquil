@@ -5,50 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tranquil - Your Mental Health Companion</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
-<body class="bg-[#FBF8FB] text-[#3F1A2B] font-sans">
+<body class="bg-[#FBF8FB] text-[#3F1A2B]">
+    <body class="bg-[#FBF8FB] text-[#3F1A2B] min-h-screen flex flex-col">
 
-  <!-- Hero Section -->
-  <section class="home relative flex items-center justify-center h-screen px-6 text-center">
-    <div class="z-10 max-w-2xl">
-      <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight text-[#3F1A2B]">
-        Welcome to Tranquil
-      </h1>
-      <p class="text-lg md:text-xl text-[#B2183A] mb-8">
-        Your personal mental health companion — here for support, reflection, and peace of mind.
-      </p>
-      <a href="#features" class="bg-[#ED4A69] text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:bg-[#B2183A] transition duration-300">
-        Explore Features
-      </a>
+  <!-- Navbar -->
+  <header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-[#B2183A]">Tranquil</h1>
+      <nav class="space-x-6">
+        <a href="#home" class="hover:text-[#ED4A69] font-medium">Home</a>
+        <a href="#features" class="hover:text-[#ED4A69] font-medium">Features</a>
+        <a href="#about" class="hover:text-[#ED4A69] font-medium">About</a>
+      </nav>
     </div>
-  </section>
+  </header>
+
+ <!-- Hero Section -->
+<section class="home relative h-screen bg-cover bg-center flex items-center justify-center text-center text-white" style="background-image: url('assets/health.png');">
+  <div class="z-10 px-6">
+    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 drop-shadow-xl">
+      YOUR MENTAL HEALTH COMPANION
+    </h1>
+    <p class="text-lg md:text-xl font-medium drop-shadow-lg">
+      Find peace, journal your journey, and breathe easier with Tranquil.
+    </p>
+  </div>
+</section>
+
 
   <!-- Features Section -->
-  <section id="features" class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center text-[#3F1A2B] mb-12">Features</h2>
-      <div class="grid md:grid-cols-3 gap-12">
+  <section id="features" class="py-20 bg-[#FBB3C8]/20">
+    <div class="container mx-auto px-6 md:px-12">
+      <h2 class="text-3xl font-bold text-center text-[#B2183A] mb-12">Features</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        
         <div class="feature-card">
-          <h3 class="text-xl font-semibold mb-3 text-[#B2183A]">Mood Tracker</h3>
-          <p>Track your emotional well-being with daily mood logging and insightful charts.</p>
+          <h3 class="text-xl font-semibold mb-2">Mood Tracking</h3>
+          <p>Track your daily mood and see patterns over time with gentle visuals.</p>
         </div>
+
         <div class="feature-card">
-          <h3 class="text-xl font-semibold mb-3 text-[#B2183A]">Mindfulness Exercises</h3>
-          <p>Access breathing exercises and guided meditations to calm your mind.</p>
+          <h3 class="text-xl font-semibold mb-2">Journaling</h3>
+          <p>Capture your thoughts in a peaceful space, free from judgment.</p>
         </div>
+
         <div class="feature-card">
-          <h3 class="text-xl font-semibold mb-3 text-[#B2183A]">Journaling</h3>
-          <p>Write freely in a secure journal that helps you reflect and grow.</p>
+          <h3 class="text-xl font-semibold mb-2">Mindfulness Exercises</h3>
+          <p>Access calming audio and breathing tools designed to help you relax.</p>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-[#3F1A2B] text-white py-6 mt-12 text-center">
-    <p>&copy; 2025 Tranquil. All rights reserved.</p>
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-white">
+    <div class="container mx-auto px-6 md:px-12 text-center">
+      <h2 class="text-3xl font-bold text-[#B2183A] mb-6">Why Tranquil?</h2>
+      <p class="max-w-3xl mx-auto text-lg">
+        Tranquil is your pocket-sized companion on the journey to better mental health.
+        Whether you're looking to unwind, reflect, or grow, our tools are crafted to support you with compassion and clarity.
+      </p>
+    </div>
+  </section>
+  
+<!-- Footer -->
+<footer class="bg-[#3F1A2B] text-white text-center py-6 relative z-10">
+    <p class="text-sm md:text-base">&copy; 2025 Tranquil. Your safe space for mental wellness</p>
   </footer>
-
 </body>
 </html>

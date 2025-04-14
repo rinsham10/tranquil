@@ -4,27 +4,63 @@
     position: absolute;
     inset: 0;
     background: linear-gradient(to bottom right, #FBB3C8, #FBF8FB);
-    opacity: 0.7;
+    opacity: 0.25; /* Keeps background visible but softens it */
     z-index: 1;
   }
   
   /* Ensures hero content stays above overlay */
   .home > * {
     z-index: 10;
+    position: relative;
+  }
+  
+  /* Hero image sizing (full screen) */
+  .home {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    min-height: 600px;
   }
   
   /* Feature card styling */
   .feature-card {
-    background-color: #FBF8FB;
-    border: 2px solid #FBB3C8;
-    padding: 24px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
+    background-color: white;
+    border-left: 6px solid #FBB3C8;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
   
   .feature-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 15px rgba(237, 74, 105, 0.2);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.08);
+  }
+  
+  /* Smooth entry animation (optional) */
+  .feature-card {
+    animation: fadeInUp 0.6s ease both;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  footer {
+    background-color: #3F1A2B;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    position: relative;
+    z-index: 10;
+    font-size: 0.95rem;
   }
   
