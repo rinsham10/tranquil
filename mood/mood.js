@@ -1,3 +1,95 @@
+// Mood-based recommendations with multiple options
+const moodRecommendations = {
+  Happy: [
+    {
+      quote: "Happiness is not something ready-made. It comes from your own actions. - Dalai Lama",
+      recommendation: "Share your happiness with others! Spread positivity today by complimenting someone or doing something kind."
+    },
+    {
+      quote: "Happiness depends upon ourselves. - Aristotle",
+      recommendation: "Take a moment to appreciate what you have right now, and enjoy the simple joys of life."
+    },
+    {
+      quote: "The most important thing is to enjoy your life – to be happy – it’s all that matters. - Audrey Hepburn",
+      recommendation: "Take a few minutes today to do something that brings you joy and helps you stay connected to your happiness."
+    },
+    {
+      quote: "For every minute you are angry, you lose sixty seconds of happiness. - Ralph Waldo Emerson",
+      recommendation: "If you're feeling extra happy, share that energy with others. A small act of kindness can go a long way!"
+    },
+    {
+      quote: "Be happy for this moment. This moment is your life. - Omar Khayyam",
+      recommendation: "Smile at a stranger today and feel the happiness ripple through both of you."
+    }
+  ],
+  Sad: [
+    {
+      quote: "Tears are the words that the heart can't express. - Unknown",
+      recommendation: "It's okay to feel sad sometimes. Try journaling your thoughts or taking a walk to clear your mind."
+    },
+    {
+      quote: "The pain you feel today is the strength you feel tomorrow. - Unknown",
+      recommendation: "Give yourself permission to feel what you’re feeling. Take a break, relax, and focus on self-care."
+    },
+    {
+      quote: "It’s okay to not be okay. - Unknown",
+      recommendation: "Consider talking to someone you trust, or even taking a mental health day to recover and recharge."
+    },
+    {
+      quote: "Sadness flies away on the wings of time. - Jean de La Fontaine",
+      recommendation: "Watch your favorite comfort show, or try doing something creative to release your emotions."
+    },
+    {
+      quote: "In the middle of difficulty lies opportunity. - Albert Einstein",
+      recommendation: "Focus on small, achievable tasks to help regain a sense of control and accomplishment."
+    }
+  ],
+  Angry: [
+    {
+      quote: "Holding onto anger is like drinking poison and expecting the other person to die. - Buddha",
+      recommendation: "Take a few deep breaths and try to let go of that anger. Consider doing a short meditation or a physical activity like stretching."
+    },
+    {
+      quote: "Anger is a short madness. - Horace",
+      recommendation: "Take a timeout from the situation. Go for a walk or meditate to help cool down."
+    },
+    {
+      quote: "For every minute you are angry, you lose sixty seconds of happiness. - Ralph Waldo Emerson",
+      recommendation: "Instead of focusing on the anger, try finding something that makes you laugh or relax."
+    },
+    {
+      quote: "The best fighter is never angry. - Lao Tzu",
+      recommendation: "Channel your anger into a productive activity, like working out or doing something that calms your mind."
+    },
+    {
+      quote: "When anger rises, think of the consequences. - Confucius",
+      recommendation: "Consider letting go of your anger by doing a quick, deep breathing exercise. Try to focus on something positive."
+    }
+  ],
+  Calm: [
+    {
+      quote: "Calmness is the cradle of power. - Josiah Gilbert Holland",
+      recommendation: "You're feeling centered today! Keep this energy going by practicing mindfulness or enjoying a peaceful activity like reading."
+    },
+    {
+      quote: "Stillness is the key to creativity. - Unknown",
+      recommendation: "You’re in a great place for self-reflection. Try journaling or meditating to keep that peaceful energy flowing."
+    },
+    {
+      quote: "A calm mind brings inner strength and self-confidence. - Dalai Lama",
+      recommendation: "Enjoy a quiet walk or sit in a peaceful spot with some calming music or nature sounds."
+    },
+    {
+      quote: "Peace comes from within. Do not seek it without. - Buddha",
+      recommendation: "Use your calm mood to help others. Your peaceful energy can be contagious and bring tranquility to those around you."
+    },
+    {
+      quote: "Nothing is more calming than a gentle breeze. - Unknown",
+      recommendation: "Enjoy some time in nature, even if it’s just a moment with a cup of tea and your favorite view."
+    }
+  ]
+};
+
 const moodButtons = document.querySelectorAll(".mood-btn");
 const logContainer = document.getElementById("mood-log");
 
@@ -9,7 +101,7 @@ function saveMood(mood) {
 
   // Save for mood logs (text display)
   const logs = JSON.parse(localStorage.getItem("moodLogs") || "[]");
-  logs.unshift(entry); // Add new entry at the top
+  logs.unshift(entry);
   localStorage.setItem("moodLogs", JSON.stringify(logs));
   renderMoodLogs();
 
@@ -18,9 +110,36 @@ function saveMood(mood) {
   moodData.push({ mood, date: now });
   localStorage.setItem("moodLog", JSON.stringify(moodData));
 
+  // Display the mood-based quote and recommendation
+  displayMoodRecommendation(mood);
+
   // Update calendar UI
-  renderMoodCalendar();
+  if (typeof renderMoodCalendar === "function") {
+    renderMoodCalendar(); // this function should exist in your script
+  }
 }
+
+// Display mood-based recommendation and quote
+function displayMoodRecommendation(mood) {
+  const recommendationContainer = document.getElementById("mood-recommendation");
+  const moodInfoArray = moodRecommendations[mood];
+
+  if (moodInfoArray && moodInfoArray.length > 0) {
+    // Select a random quote and recommendation
+    const randomIndex = Math.floor(Math.random() * moodInfoArray.length);
+    const moodInfo = moodInfoArray[randomIndex];
+
+    recommendationContainer.innerHTML = `
+      <h3><strong>Quote for You:</strong></h3>
+      <p>"${moodInfo.quote}"</p><br>
+      <h3><strong>Recommendation:</strong></h3>
+      <p>${moodInfo.recommendation}</p>
+    `;
+  } else {
+    recommendationContainer.innerHTML = "<p>No recommendation available for this mood.</p>";
+  }
+}
+
 
 // Render mood logs below the tracker
 function renderMoodLogs() {
