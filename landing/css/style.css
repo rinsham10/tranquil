@@ -41,26 +41,38 @@
   
   
   /* Feature card styling */
+  .feature-card-link {
+    text-decoration: none;
+  }
+  
   .feature-card {
     background-color: white;
-    border-left: 6px solid #FBB3C8;
     padding: 1.5rem;
-    border-radius: 0.75rem;
-    box-shadow: 0 10px 15px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    animation: fadeInUp 0.6s ease both;
+    border-radius: 1rem;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.05);
+    border-left: 6px solid #FBB3C8;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
   }
   
   .feature-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 25px rgba(0,0,0,0.08);
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 20px rgba(237, 74, 105, 0.1);
   }
   
-  
-  /* Smooth entry animation (optional) */
-  .feature-card {
-    animation: fadeInUp 0.6s ease both;
+  .feature-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 0.75rem;
   }
+  
+  .feature-card p {
+    font-size: 1rem;
+    color: #000000;
+    line-height: 1.6;
+  }
+  
   
   @keyframes fadeInUp {
     from {
