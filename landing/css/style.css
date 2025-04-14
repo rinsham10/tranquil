@@ -98,3 +98,18 @@
     color: #3F1A2B;
   }
   
+  
+.contact-info {
+    text-align: center;  /* Center align the text */
+  }
+  
+  .contact-info p {
+    font-size: 1rem;  /* Adjust the font size */
+    font-weight: bold;  /* Make it bold if needed */
+  }
+  
+  .contact-info .email {
+    font-size: 1rem;  /* Increase size of email specifically */
+    text-transform: lowercase;  /* Ensure email is in lowercase */
+  }
+  
