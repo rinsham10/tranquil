@@ -1,0 +1,30 @@
+/* Overlay background for hero section */
+.home::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom right, #FBB3C8, #FBF8FB);
+    opacity: 0.7;
+    z-index: 1;
+  }
+  
+  /* Ensures hero content stays above overlay */
+  .home > * {
+    z-index: 10;
+  }
+  
+  /* Feature card styling */
+  .feature-card {
+    background-color: #FBF8FB;
+    border: 2px solid #FBB3C8;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px rgba(237, 74, 105, 0.2);
+  }
+  
