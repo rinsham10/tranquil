@@ -1,5 +1,7 @@
-# Tranquil 😌
-A mental wellness companion web app built with Django.
+# Tranquil 
+A mental wellness companion web app 
+
+Live Site: https://rinsham10.github.io/tranquil/
 
 ## Features
 - Relaxation guides
