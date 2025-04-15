@@ -50,7 +50,6 @@
       <p class="text-xl text-white mb-10">
         Pause. Breathe. Relax. From guided breathing to audio meditations, Tranquil helps you slow down and reconnect with your inner calm whenever you need it.
       </p>
-      
 
       <!-- Cards Grid -->
       <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
@@ -77,6 +76,20 @@
         </div>
       </div>
     </section>
+  
+  <!-- Breathing Exercise Section (Initially Hidden) -->
+<div id="breathingSection" class="mt-10 text-center" style="display: none;">
+  <h3 class="text-2xl font-semibold text-[#B2183A] mb-4">Guided Breathing</h3>
+  <p id="breathingInstruction" class="text-gray-700 mb-4">Click "Start Breathing Exercise" to begin.</p>
+  <p id="breathingTimer" class="text-4xl font-bold text-[#B2183A] mb-4">--</p>
+  <div>
+    <button id="startBreathingBtnTimer" class="bg-[#B2183A] text-white py-2 px-4 rounded mb-2">Start</button>
+    <button id="pauseBreathingBtn" class="bg-[#ED4A69] text-white py-2 px-4 rounded mb-2 hidden">Pause</button>
+    <button id="stopBreathingBtn" class="bg-[#4CAF50] text-white py-2 px-4 rounded mb-2 hidden">Stop</button>
+    <button id="resumeBreathingBtn" class="bg-[#FFD700] text-white py-2 px-4 rounded mb-2 hidden">Resume</button> <!-- Resume Button -->
+  </div>
+</div>
+
 
     <script src="mindfulness.js"></script>
   </body>
