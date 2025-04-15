@@ -20,42 +20,45 @@ body {
   }
   
   section p {
-    color: #ff0000;
+    color: #333;
     font-size: 1.125rem;
     max-width: 700px;
     margin: 0 auto 2.5rem;
   }
   
-  /* Grid Layout */
+/* Grid Layout */
+.grid {
+  display: grid;
+  gap: 1rem; /* Reduced gap between the cards */
+  justify-items: center; /* Center the grid items */
+}
+
+@media (min-width: 768px) {
   .grid {
-    display: grid;
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  @media (min-width: 768px) {
-    .grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  @media (min-width: 1024px) {
-    .grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  
-  /* Feature Cards */
+}
+
+/* Feature Cards */
 .grid > div {
-  background: rgba(255, 255, 255, 0.452); /* Slightly more transparent background */
+  background: rgba(255, 255, 255, 0.452);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 1rem;
-  padding: 1.5rem; /* Reduced padding */
+  padding: 1.25rem;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Start aligning items */
-  min-height: 240px; /* Reduced min-height */
+  justify-content: flex-start;
+  min-height: 240px;
+  max-width: 280px; /* Set a smaller max-width */
+  width: 100%;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -67,7 +70,7 @@ body {
 /* Card Paragraphs */
 .grid p {
   color: #444;
-  margin-bottom: 1rem; /* Reduced margin between paragraph and button */
+  margin-bottom: 1rem;
   line-height: 1.6;
   flex-grow: 1;
 }
@@ -88,15 +91,13 @@ body {
   border-radius: 9999px;
   font-weight: 500;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  margin-top: 10px; /* Added small margin above button */
+  margin-top: 10px;
 }
 
 .grid button:hover {
   background-color: #ED4A69;
   transform: scale(1.05);
 }
-
-
    /* Navbar Styling */
    nav a {
     position: relative;

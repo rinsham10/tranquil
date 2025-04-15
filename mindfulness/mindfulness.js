@@ -17,8 +17,6 @@ const musicPlayerSection = document.getElementById('musicPlayerSection');
 const stopMusicBtn = document.getElementById('stopMusicBtn');
 const closeMusicSectionBtn = document.getElementById('closeMusicSectionBtn');
 
-// Visuals
-const viewVisualsBtn = document.getElementById('viewVisualsBtn');
 
 // Show music player and play music
 playMeditationBtn.addEventListener('click', () => {
@@ -51,10 +49,6 @@ closeMusicSectionBtn.addEventListener('click', () => {
   stopMeditationBtn.classList.add('hidden');
 });
 
-// Show visuals
-viewVisualsBtn.addEventListener('click', () => {
-  alert("Visuals will be displayed here!");
-});
 
 // Breathing Logic
 let breathingInterval;

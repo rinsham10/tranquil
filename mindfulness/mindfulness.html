@@ -55,7 +55,9 @@
   <h2 class="text-5xl font-bold text-white mb-4">Mindfulness Exercises</h2>
   <p class="text-xl text-white mb-10">Pause. Breathe. Relax. From guided breathing to audio meditations, Tranquil helps you slow down and reconnect with your inner calm whenever you need it.</p>
 
-  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6">
+  <div class="max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-6">
+
+
     <!-- Breathing Card -->
     <div class="bg-white bg-opacity-90 p-3 h-56 rounded-lg shadow-md">
       <h3 class="text-lg font-semibold text-[#B2183A] mb-2">Guided Breathing</h3>
@@ -70,16 +72,14 @@
       <button id="playMeditationBtn" class="bg-[#B2183A] text-white py-2 px-4 rounded mr-2">Play</button>
       <button id="stopMeditationBtn" class="bg-[#B2183A] text-white py-2 px-4 rounded hidden">Stop</button>
     </div>
-
-    <!-- Visuals Card -->
+    <!-- Visuals Card 
     <div class="bg-white bg-opacity-90 p-3 h-56 rounded-lg shadow-md">
       <h3 class="text-lg font-semibold text-[#B2183A] mb-2">Relaxation Visuals</h3>
       <p class="text-gray-700 mb-3">Soothing visuals to help you unwind.</p>
       <button id="viewVisualsBtn" class="bg-[#B2183A] text-white py-2 px-4 rounded">View Visuals</button>
-    </div>
+    </div>-->
   </div>
 </section>
-
     <!-- Breathing Section -->
     <div id="breathingSection" class="mt-10 text-center" style="display: none;">
       <h3 class="text-4xl font-semibold text-[#B2183A] mb-4">Guided Breathing</h3>
@@ -114,7 +114,6 @@
 <!-- Music Player Section -->
 <section id="musicPlayerSection" class="hidden">
   <h3>Now Playing: Relaxing Playlist</h3>
-
   <!-- Spotify Embed Player -->
   <iframe 
     style="border-radius:12px" 
@@ -126,7 +125,6 @@
     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
     loading="lazy">
   </iframe>
-
   <!-- Optional: Stop and Close Buttons -->
   <div style="margin-top: 10px;">
     <button id="stopMusicBtn">Stop</button>
@@ -136,32 +134,23 @@
 <!-- ✅ Audio Recommendations Section -->
 <section class="pt-16 pb-20 text-center">
   <h2 class="text-5xl font-bold text-white mb-4">Audio Recommendations</h2>
-
-  
   <div class="space-y-4">
     <!-- Buttons for different audio genres -->
-    <button class="bg-[#B2183A] text-[#B2183A] py-3 px-6 text-lg rounded" id="playlistBtn">
-      Calming Tracks
-    </button>
-    <button class="bg-[#B2183A] text-[#B2183A] py-3 px-6 text-lg rounded" id="peacefulMusicBtn">
-      Peaceful Music
-    </button>
-    <button class="bg-[#B2183A] text-[#B2183A] py-3 px-6 text-lg rounded" id="sleepMusicBtn">
-      Sleep Music
-    </button>
+<button class="bg-transparent text-[#B2183A] hover:text-white transition duration-200 py-3 px-4 text-lg" id="playlistBtn">
+  Calming Tracks
+</button>
+<button class="bg-transparent text-[#B2183A] hover:text-white transition duration-200 py-3 px-4 text-lg" id="peacefulMusicBtn">
+  Peaceful Music
+</button>
+<button class="bg-transparent text-[#B2183A] hover:text-white transition duration-200 py-3 px-4 text-lg" id="sleepMusicBtn">
+  Sleep Music
+</button>
+
   </div>
 
   <!-- Display the current audio recommendation name -->
   <p id="audioRecommendationText" class="text-xl text-gray-700 mt-6"></p>
 </section>
-
-<!-- Visual Modal -->
-<div id="visualsModal" class="fixed top-0 left-0 w-full h-full z-50 flex items-center justify-center">
-  <button id="closeVisualsBtn" class="absolute top-5 right-5 bg-white text-[#B2183A] px-4 py-2 rounded shadow-md font-semibold">Close</button>
-</div>
-
-<br><br><br>
-
 <script src="mindfulness.js"></script>
 </body>
 </html>
