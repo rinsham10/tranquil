@@ -20,7 +20,7 @@ body {
   }
   
   section p {
-    color: #333;
+    color: #ff0000;
     font-size: 1.125rem;
     max-width: 700px;
     margin: 0 auto 2.5rem;
@@ -132,7 +132,7 @@ body {
 
 ::-webkit-scrollbar-track {
   background: #f3c8c8;
-  border-radius: 10px;
+  
 }
 
 ::-webkit-scrollbar-thumb {

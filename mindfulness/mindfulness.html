@@ -108,11 +108,60 @@
       </div>
     </div>
 
-    <!-- Visual Modal -->
-    <div id="visualsModal" class="fixed top-0 left-0 w-full h-full z-50 flex items-center justify-center">
-      <button id="closeVisualsBtn" class="absolute top-5 right-5 bg-white text-[#B2183A] px-4 py-2 rounded shadow-md font-semibold">Close</button>
-    </div>
+<!-- Keep all your head and previous body content unchanged -->
+<!-- ... existing code before music player remains untouched ... -->
+
+<!-- Music Player Section -->
+<section id="musicPlayerSection" class="hidden">
+  <h3>Now Playing: Relaxing Playlist</h3>
+
+  <!-- Spotify Embed Player -->
+  <iframe 
+    style="border-radius:12px" 
+    src="https://open.spotify.com/embed/playlist/37i9dQZF1DX4sWSpwq3LiO?utm_source=generator" 
+    width="100%" 
+    height="380" 
+    frameborder="0" 
+    allowfullscreen="" 
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+    loading="lazy">
+  </iframe>
+
+  <!-- Optional: Stop and Close Buttons -->
+  <div style="margin-top: 10px;">
+    <button id="stopMusicBtn">Stop</button>
+    <button id="closeMusicSectionBtn">Close</button>
+  </div>
+</section>
+<!-- ✅ Audio Recommendations Section -->
+<section class="pt-16 pb-20 text-center">
+  <h2 class="text-5xl font-bold text-white mb-4">Audio Recommendations</h2>
+
+  
+  <div class="space-y-4">
+    <!-- Buttons for different audio genres -->
+    <button class="bg-[#B2183A] text-[#B2183A] py-3 px-6 text-lg rounded" id="playlistBtn">
+      Calming Tracks
+    </button>
+    <button class="bg-[#B2183A] text-[#B2183A] py-3 px-6 text-lg rounded" id="peacefulMusicBtn">
+      Peaceful Music
+    </button>
+    <button class="bg-[#B2183A] text-[#B2183A] py-3 px-6 text-lg rounded" id="sleepMusicBtn">
+      Sleep Music
+    </button>
+  </div>
+
+  <!-- Display the current audio recommendation name -->
+  <p id="audioRecommendationText" class="text-xl text-gray-700 mt-6"></p>
+</section>
+
+<!-- Visual Modal -->
+<div id="visualsModal" class="fixed top-0 left-0 w-full h-full z-50 flex items-center justify-center">
+  <button id="closeVisualsBtn" class="absolute top-5 right-5 bg-white text-[#B2183A] px-4 py-2 rounded shadow-md font-semibold">Close</button>
+</div>
+
 <br><br><br>
-    <script src="mindfulness.js"></script>
-  </body>
+
+<script src="mindfulness.js"></script>
+</body>
 </html>

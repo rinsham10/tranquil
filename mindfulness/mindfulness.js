@@ -174,3 +174,34 @@ endBreathingBtn.addEventListener('click', () => {
   isBreathing = false;
   isPaused = false;
 });
+
+// 🎵 Audio Recommendation Section (External Links)
+const playlistBtn = document.getElementById('playlistBtn');
+const peacefulMusicBtn = document.getElementById('peacefulMusicBtn');
+const sleepMusicBtn = document.getElementById('sleepMusicBtn');
+
+
+// Links to external playlists (replace with your own or real ones)
+const playlistLinks = {
+  calming: "https://open.spotify.com/playlist/3l6b0zuXjgyPxLK6PIAqED?si=7pMUJOVlQ5yzwWAmod59gw",  // Replace with your fav calming playlist
+  peaceful: "https://open.spotify.com/playlist/37i9dQZF1DWZqd5JICZI0u", // Peaceful piano
+  sleep: "https://open.spotify.com/playlist/37i9dQZF1DWZd79rJ6a7lp"     // Deep sleep
+};
+
+// Update display text and open the link
+function openMusicRecommendation(url, label) {
+  window.open(url, '_blank');
+}
+
+// Event Listeners for each button
+playlistBtn.addEventListener('click', () => {
+  openMusicRecommendation(playlistLinks.calming, "Calming Playlist on Spotify");
+});
+
+peacefulMusicBtn.addEventListener('click', () => {
+  openMusicRecommendation(playlistLinks.peaceful, "Peaceful Piano Playlist");
+});
+
+sleepMusicBtn.addEventListener('click', () => {
+  openMusicRecommendation(playlistLinks.sleep, "Sleep Sounds Playlist");
+});
