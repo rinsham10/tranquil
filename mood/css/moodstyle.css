@@ -1,17 +1,18 @@
 /* Global Styles */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #FBF8FB;
+  background: linear-gradient(to bottom right, #fff0f3, #f9e2ff); /* Gradient background */
   margin: 0;
   padding: 0;
   position: relative;
+  color: #333;
 }
 
 /* Navbar Styling */
 nav a {
   position: relative;
   font-weight: 500;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 nav a::before {
@@ -27,6 +28,7 @@ nav a::before {
 
 nav a:hover {
   color: #B2183A;
+  transform: scale(1.1); /* Slight scale effect on hover */
 }
 
 nav a:hover::before {
@@ -34,39 +36,38 @@ nav a:hover::before {
   left: 0;
 }
 
-
 /* Background blobs */
 .background-decor {
   position: fixed;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.15;
-  filter: blur(40px);
+  opacity: 0.25; /* Slightly higher opacity for more prominence */
+  filter: blur(15px); /* Slightly less blur for distinct edges */
   border-radius: 50%;
 }
 
 .blob1 {
-  width: 300px;
-  height: 300px;
-  background-color: #fbb6ce;
-  top: -100px;
-  left: -80px;
+  width: 400px; /* Increased size */
+  height: 400px;
+  background-color: #ff007f; /* Vibrant pink */
+  top: -130px;
+  left: -120px;
 }
 
 .blob2 {
-  width: 350px;
-  height: 350px;
-  background-color: #fcd34d;
-  bottom: -200px;
-  right: -150px;
+  width: 450px; /* Increased size */
+  height: 450px;
+  background-color: #ff9900; /* Bright yellow */
+  bottom: -230px;
+  right: -200px;
 }
 
 .blob3 {
-  width: 250px;
-  height: 250px;
-  background-color: #6ee7b7;
+  width: 350px; /* Increased size */
+  height: 350px;
+  background-color: #00ff99; /* Bright green */
   top: 40%;
-  left: -120px;
+  left: -150px;
   transform: translateY(-50%);
 }
 
@@ -76,18 +77,19 @@ nav a:hover::before {
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom right, #FBB3C8, #FBF8FB);
-  opacity: 0.08;
+  opacity: 0.1;
   z-index: 1;
 }
 
 /* Mood Buttons */
 .mood-btn {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .mood-btn:hover {
-  transform: translateY(-5px);
-  box-shadow: 8px 8px 20px rgba(237, 74, 105, 0.1);
+  transform: translateY(-7px); /* More pronounced hover effect */
+  box-shadow: 8px 8px 20px rgba(237, 74, 105, 0.15);
+  background-color: #fbd4db; /* Soft background color change on hover */
 }
 
 .mood-btn span {
@@ -99,7 +101,7 @@ nav a:hover::before {
 
 .mood-btn p {
   font-size: 1.25rem;
-  color: #000;
+  color: #333; /* Darker color for readability */
 }
 
 .mood-btn.bg-white {
@@ -117,24 +119,31 @@ nav a:hover::before {
 
 /* Mood History Section */
 #history-title {
-  font-size: 1.5rem;
+  font-size: 1.8rem; /* Slightly larger title */
   font-weight: 700;
   color: #B2183A;
+  margin-bottom: 1rem;
 }
+#clear-history {background-image: linear-gradient(to right, #FBD3E9 0%, #BB377D  51%, #FBD3E9  100%)}
+
 
 #clear-history {
-  background-color: #b2183987;
-  color: black;
+  color: white;      
   font-weight: medium;
   padding: 1rem 2rem;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  border-radius: 10px;
+  transition: 0.5s;
   cursor: pointer;
+  text-align: center;
+  display: block;
+  background-size: 200% auto;
+   box-shadow: 0 0 20px #eee;
 }
 
 #clear-history:hover {
-  background-color: #ed4a6892;
-  color: white;
+  background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
 }
 
 /* Mood Calendar Section */
@@ -142,29 +151,30 @@ nav a:hover::before {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 0.5rem;
-  padding: 1rem;
+  padding: 1.5rem;
   background: #FBF8FB;
   border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Softer shadow for depth */
+  animation: fadeIn 1s ease-out; /* Fade-in effect */
 }
 
 /* Each mood box in the calendar */
 .mood-box {
   padding: 0.6rem 0;
-  font-size: 0.9rem;
+  font-size: 1rem; /* Increased font size for better readability */
   font-weight: 500;
   border-radius: 0.75rem;
   color: #333;
   background-color: #f0f0f0;
   text-align: center;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.04);
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.1); /* Slightly stronger shadow */
 }
 
 .mood-box:hover {
-  transform: translateY(-3px);
-  box-shadow: 3px 6px 10px rgba(0,0,0,0.1);
+  transform: translateY(-5px); /* Slightly more pronounced hover */
+  box-shadow: 3px 6px 12px rgba(0,0,0,0.2);
 }
 
 /* Mood Colors */
@@ -195,7 +205,7 @@ nav a:hover::before {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #B2183A;
+  background-color: #b218399e;
   border-radius: 10px;
 }
 
@@ -207,10 +217,20 @@ footer {
   padding: 1.5rem 1rem;
   position: relative;
   z-index: 10;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  background: linear-gradient(to bottom right, #e7c0e6, #f1c6f0); /* Subtle gradient for footer */
 }
 
 footer p {
   color: #3F1A2B;
 }
 
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
