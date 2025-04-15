@@ -39,7 +39,7 @@ nav a:hover::before {
 /* Background blobs */
 .background-decor {
   position: fixed;
-  z-index: 0;
+  z-index: -1;
   pointer-events: none;
   opacity: 0.25; /* Slightly higher opacity for more prominence */
   filter: blur(15px); /* Slightly less blur for distinct edges */
