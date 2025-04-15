@@ -269,3 +269,40 @@ body {
     transform: scale(0.97);
   }
   
+  /* Edit Button (same style as Delete Button) */
+.edit-btn {
+    align-self: flex-start;
+    background-color: #F2D7D9;
+    color: #5a2a2a;
+    border: none;
+    border-radius: 15px;
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.1s ease;
+  }
+  
+  .edit-btn:hover {
+    background-color: #e8c6c6;
+    transform: scale(1.03);
+  }
+  
+  .edit-btn:active {
+    transform: scale(0.97);
+  }
+  .entry-text {
+    word-wrap: break-word; /* This ensures long words break */
+    word-break: break-word; /* For breaking words within a container */
+    overflow-wrap: break-word; /* For better compatibility across browsers */
+  }
+  
+  .entry-content {
+    max-width: 100%; /* Ensure container doesn't stretch beyond its max-width */
+    box-sizing: border-box; /* Prevent padding from affecting the width */
+  }
+  
+  .entry-actions {
+    word-wrap: break-word;
+  }
