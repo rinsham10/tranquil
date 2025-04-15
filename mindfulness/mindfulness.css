@@ -1,0 +1,105 @@
+/* General Layout */
+body {
+    font-family: 'Poppins', sans-serif;
+    padding-top: 90px;
+    margin: 0;
+  }
+  
+  /* Section Styling */
+  section {
+    padding: 4rem 1rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  section h2 {
+    color: #B2183A;
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+  
+  section p {
+    color: #333;
+    font-size: 1.125rem;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+  }
+  
+  /* Grid Layout */
+  .grid {
+    display: grid;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* Feature Cards */
+  .grid > div {
+    background: rgba(255, 255, 255, 0.8); /* Made whiter */
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .grid > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Card Headings */
+  .grid h3 {
+    color: #B2183A;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  /* Card Paragraphs */
+  .grid p {
+    color: #444;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+  
+  /* Button Group Wrapper */
+  .grid .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: auto;
+  }
+  
+  /* Buttons */
+  .grid button {
+    background-color: #B2183A;
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .grid button:hover {
+    background-color: #a01532;
+    transform: scale(1.05);
+  }
+  

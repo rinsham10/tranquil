@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Mindfulness | Tranquil</title>
+    <!-- Fonts & Tailwind CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="mindfulness.css" />
+    <style>
+      .background--custom {
+        background: linear-gradient(90deg, #FBF8FB, #B2183A, #f5a2a1);
+        background-size: 300% 300%;
+        animation: gradient 8s alternate infinite;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+      }
+      @keyframes gradient {
+        0% {
+          background-position: 0%;
+        }
+        100% {
+          background-position: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body class="font-[Poppins] text-gray-800">
+    <!-- Background -->
+    <div class="background--custom"></div>
+
+    <!-- Navbar -->
+    <header class="bg-white bg-opacity-90 shadow-md fixed top-0 left-0 w-full z-50">
+      <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-[#B2183A]">Tranquil</h1>
+        <nav class="space-x-6">
+          <a href="../index.html#home" class="hover:text-[#ED4A69] font-medium">HOME</a>
+          <a href="../index.html#features" class="hover:text-[#ED4A69] font-medium">FEATURES</a>
+          <a href="../index.html#about" class="hover:text-[#ED4A69] font-medium">ABOUT</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Mindfulness Exercises Section -->
+    <section class="pt-16 pb-20 text-center">
+      <h2 class="text-5xl font-bold text-white mb-4">Mindfulness Exercises</h2>
+      <p class="text-xl text-white mb-10">
+        Pause. Breathe. Relax. From guided breathing to audio meditations, Tranquil helps you slow down and reconnect with your inner calm whenever you need it.
+      </p>
+      
+
+      <!-- Cards Grid -->
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+        <!-- Breathing -->
+        <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold text-[#B2183A] mb-4">Guided Breathing</h3>
+          <p class="text-gray-700 mb-4">Take a moment to focus on your breath. A guided breathing session to help you relax.</p>
+          <button id="startBreathingBtn" class="bg-[#B2183A] text-white py-2 px-4 rounded">Start Breathing Exercise</button>
+        </div>
+
+        <!-- Audio Meditation -->
+        <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold text-[#B2183A] mb-4">Audio Meditation</h3>
+          <p class="text-gray-700 mb-4">Relax your mind with soothing audio meditations to calm your thoughts.</p>
+          <button id="playMeditationBtn" class="bg-[#B2183A] text-white py-2 px-4 rounded mr-2">Play</button>
+          <button id="stopMeditationBtn" class="bg-[#B2183A] text-white py-2 px-4 rounded hidden">Stop</button>
+        </div>
+
+        <!-- Relaxation Visuals -->
+        <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-semibold text-[#B2183A] mb-4">Relaxation Visuals</h3>
+          <p class="text-gray-700 mb-4">Soothing visuals that help you disconnect and unwind.</p>
+          <button id="viewVisualsBtn" class="bg-[#B2183A] text-white py-2 px-4 rounded">View Visuals</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="mindfulness.js"></script>
+  </body>
+</html>
