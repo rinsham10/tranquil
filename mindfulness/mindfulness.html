@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Mindfulness | Tranquil</title>
-    <!-- Fonts & Tailwind CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="stylesheet" href="mindfulness.css" />
     <style>
       .background--custom {
@@ -30,9 +29,8 @@
         }
       }
 
-      /* Fullscreen Modal for Visuals */
       #visualsModal {
-        background-image: url('assets/relaxation.gif'); /* Replace with your own relaxing visual image/gif */
+        background-image: url('assets/relaxation.gif');
         background-size: cover;
         background-position: center;
         display: none;
@@ -40,7 +38,6 @@
     </style>
   </head>
   <body class="font-[Poppins] text-gray-800">
-    <!-- Background -->
     <div class="background--custom"></div>
     <header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
       <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -53,59 +50,69 @@
       </div>
     </header>
 
-    <!-- Mindfulness Exercises Section -->
-    <section class="pt-16 pb-20 text-center">
-      <h2 class="text-5xl font-bold text-white mb-4">Mindfulness Exercises</h2>
-      <p class="text-xl text-white mb-10">
-        Pause. Breathe. Relax. From guided breathing to audio meditations, Tranquil helps you slow down and reconnect with your inner calm whenever you need it.
-      </p>
+    <!-- Main Section -->
+<section class="pt-16 pb-20 text-center">
+  <h2 class="text-5xl font-bold text-white mb-4">Mindfulness Exercises</h2>
+  <p class="text-xl text-white mb-10">Pause. Breathe. Relax. From guided breathing to audio meditations, Tranquil helps you slow down and reconnect with your inner calm whenever you need it.</p>
 
-      <!-- Cards Grid -->
-      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
-        <!-- Breathing -->
-        <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-[#B2183A] mb-4">Guided Breathing</h3>
-          <p class="text-gray-700 mb-4">Take a moment to focus on your breath. A guided breathing session to help you relax.</p>
-          <button id="startBreathingBtn" class="bg-[#B2183A] text-white py-2 px-4 rounded">Start Breathing Exercise</button>
-        </div>
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6">
+    <!-- Breathing Card -->
+    <div class="bg-white bg-opacity-90 p-3 h-56 rounded-lg shadow-md">
+      <h3 class="text-lg font-semibold text-[#B2183A] mb-2">Guided Breathing</h3>
+      <p class="text-gray-700 mb-3">Take a moment to focus on your breath.</p>
+      <button id="startBreathingBtn" class="bg-[#B2183A] text-white py-2 px-4 rounded">Start Breathing Exercise</button>
+    </div>
 
-        <!-- Audio Meditation -->
-        <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-[#B2183A] mb-4">Audio Meditation</h3>
-          <p class="text-gray-700 mb-4">Relax your mind with soothing audio meditations to calm your thoughts.</p>
-          <button id="playMeditationBtn" class="bg-[#B2183A] text-white py-2 px-4 rounded mr-2">Play</button>
-          <button id="stopMeditationBtn" class="bg-[#B2183A] text-white py-2 px-4 rounded hidden">Stop</button>
-        </div>
+    <!-- Meditation Card -->
+    <div class="bg-white bg-opacity-90 p-3 h-56 rounded-lg shadow-md">
+      <h3 class="text-lg font-semibold text-[#B2183A] mb-2">Audio Meditation</h3>
+      <p class="text-gray-700 mb-3">Relax your mind with soothing audio meditations.</p>
+      <button id="playMeditationBtn" class="bg-[#B2183A] text-white py-2 px-4 rounded mr-2">Play</button>
+      <button id="stopMeditationBtn" class="bg-[#B2183A] text-white py-2 px-4 rounded hidden">Stop</button>
+    </div>
 
-        <!-- Relaxation Visuals -->
-        <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-md">
-          <h3 class="text-xl font-semibold text-[#B2183A] mb-4">Relaxation Visuals</h3>
-          <p class="text-gray-700 mb-4">Soothing visuals that help you disconnect and unwind.</p>
-          <button id="viewVisualsBtn" class="bg-[#B2183A] text-white py-2 px-4 rounded">View Visuals</button>
-        </div>
-      </div>
-    </section>
+    <!-- Visuals Card -->
+    <div class="bg-white bg-opacity-90 p-3 h-56 rounded-lg shadow-md">
+      <h3 class="text-lg font-semibold text-[#B2183A] mb-2">Relaxation Visuals</h3>
+      <p class="text-gray-700 mb-3">Soothing visuals to help you unwind.</p>
+      <button id="viewVisualsBtn" class="bg-[#B2183A] text-white py-2 px-4 rounded">View Visuals</button>
+    </div>
+  </div>
+</section>
 
-    <!-- Breathing Exercise Section -->
+    <!-- Breathing Section -->
     <div id="breathingSection" class="mt-10 text-center" style="display: none;">
       <h3 class="text-4xl font-semibold text-[#B2183A] mb-4">Guided Breathing</h3>
       <p id="breathingInstruction" class="text-2xl text-gray-700 mb-4">Click "Start Breathing Exercise" to begin.</p>
       <p id="breathingTimer" class="text-4xl font-bold text-[#B2183A] mb-4">--</p>
-      <!-- Inside the Breathing Exercise Section -->
-<div>
-  <button id="startBreathingBtnTimer" class="bg-[#B2183A] text-white py-2 px-4 rounded mb-2">Start</button>
-  <button id="pauseBreathingBtn" class="bg-[#ED4A69] text-white py-2 px-4 rounded mb-2 hidden">Pause</button>
-  <button id="stopBreathingBtn" class="bg-[#4CAF50] text-white py-2 px-4 rounded mb-2 hidden">Stop</button>
-  <button id="resumeBreathingBtn" class="bg-[#FFD700] text-white py-2 px-4 rounded mb-2 hidden">Resume</button>
-  <button id="endBreathingBtn" class="bg-[#6B7280] text-white py-2 px-4 rounded mb-2 hidden">End</button> <!-- New button -->
-</div>
+      <div>
+        <button id="startBreathingBtnTimer" class="bg-[#B2183A] text-white py-2 px-4 rounded mb-2">Start</button>
+        <button id="pauseBreathingBtn" class="bg-[#ED4A69] text-white py-2 px-4 rounded mb-2 hidden">Pause</button>
+        <button id="stopBreathingBtn" class="bg-[#4CAF50] text-white py-2 px-4 rounded mb-2 hidden">Stop</button>
+        <button id="resumeBreathingBtn" class="bg-[#FFD700] text-white py-2 px-4 rounded mb-2 hidden">Resume</button>
+        <button id="endBreathingBtn" class="bg-[#6B7280] text-white py-2 px-4 rounded mb-2 hidden">Close</button>
+      </div>
     </div>
 
-    <!-- Relaxation Visuals Modal -->
+    <!-- Music Player -->
+    <div id="musicPlayerSection" class="mt-10 text-center" style="display: none;">
+      <h3 class="text-4xl font-semibold text-[#B2183A] mb-4">Relaxing Music</h3>
+      <p class="text-2xl text-gray-700 mb-4">Enjoy calming sounds to ease your mind.</p>
+      <audio id="relaxingAudio" controls class="mx-auto mb-4">
+        <source src="assets/relax.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+      <div>
+        <button id="stopMusicBtn" class="bg-[#ED4A69] text-white py-2 px-4 rounded mb-2">Stop</button>
+        <button id="closeMusicSectionBtn" class="bg-[#4CAF50] text-white py-2 px-4 rounded mb-2">Close</button>
+      </div>
+    </div>
+
+    <!-- Visual Modal -->
     <div id="visualsModal" class="fixed top-0 left-0 w-full h-full z-50 flex items-center justify-center">
       <button id="closeVisualsBtn" class="absolute top-5 right-5 bg-white text-[#B2183A] px-4 py-2 rounded shadow-md font-semibold">Close</button>
     </div>
-<br><br><br><br><br><br><br>
+<br><br><br>
     <script src="mindfulness.js"></script>
   </body>
 </html>

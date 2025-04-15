@@ -1,4 +1,4 @@
-// Elements
+// Breathing Section
 const breathingSection = document.getElementById('breathingSection');
 const breathingTimer = document.getElementById('breathingTimer');
 const breathingInstruction = document.getElementById('breathingInstruction');
@@ -9,29 +9,54 @@ const stopBreathingBtn = document.getElementById('stopBreathingBtn');
 const resumeBreathingBtn = document.getElementById('resumeBreathingBtn');
 const endBreathingBtn = document.getElementById('endBreathingBtn');
 
+// Audio Meditation Section
 const playMeditationBtn = document.getElementById('playMeditationBtn');
 const stopMeditationBtn = document.getElementById('stopMeditationBtn');
+const relaxingAudio = document.getElementById('relaxingAudio');
+const musicPlayerSection = document.getElementById('musicPlayerSection');
+const stopMusicBtn = document.getElementById('stopMusicBtn');
+const closeMusicSectionBtn = document.getElementById('closeMusicSectionBtn');
+
+// Visuals
 const viewVisualsBtn = document.getElementById('viewVisualsBtn');
 
-let audio = new Audio('assets/relax.mp3'); // Replace with your actual path
-
-// Play the meditation audio
-playMeditationBtn.addEventListener('click', function () {
-  audio.play();
+// Show music player and play music
+playMeditationBtn.addEventListener('click', () => {
+  musicPlayerSection.style.display = 'block';
+  relaxingAudio.play();
   playMeditationBtn.classList.add('hidden');
   stopMeditationBtn.classList.remove('hidden');
-  alert('Enjoy your meditation!');
 });
 
-// Stop the meditation audio
-stopMeditationBtn.addEventListener('click', function () {
-  audio.pause();
-  audio.currentTime = 0;
-  stopMeditationBtn.classList.add('hidden');
+// Stop meditation (hide play/stop)
+stopMeditationBtn.addEventListener('click', () => {
+  relaxingAudio.pause();
+  relaxingAudio.currentTime = 0;
   playMeditationBtn.classList.remove('hidden');
+  stopMeditationBtn.classList.add('hidden');
 });
 
-// Timer & Exercise Variables
+// Stop music inside player
+stopMusicBtn.addEventListener('click', () => {
+  relaxingAudio.pause();
+  relaxingAudio.currentTime = 0;
+});
+
+// Close music section
+closeMusicSectionBtn.addEventListener('click', () => {
+  relaxingAudio.pause();
+  relaxingAudio.currentTime = 0;
+  musicPlayerSection.style.display = 'none';
+  playMeditationBtn.classList.remove('hidden');
+  stopMeditationBtn.classList.add('hidden');
+});
+
+// Show visuals
+viewVisualsBtn.addEventListener('click', () => {
+  alert("Visuals will be displayed here!");
+});
+
+// Breathing Logic
 let breathingInterval;
 let isBreathing = false;
 let isPaused = false;
@@ -45,25 +70,20 @@ const breathingSteps = [
   { action: "Hold", duration: 7, description: "Hold your breath again." }
 ];
 
-// Show breathing section and hide the feature card button
-startBreathingBtn.addEventListener('click', function () {
+startBreathingBtn.addEventListener('click', () => {
   breathingSection.style.display = "block";
   startBreathingBtn.style.display = "none";
   startBreathingBtnTimer.style.display = "inline-block";
 });
 
-// Start button in the timer section
-startBreathingBtnTimer.addEventListener('click', function () {
-  startBreathingExercise();
-});
+startBreathingBtnTimer.addEventListener('click', () => startBreathingExercise());
 
-// Start Exercise
 function startBreathingExercise() {
   timeLeft = breathingSteps[currentStep].duration;
   breathingInstruction.textContent = breathingSteps[currentStep].description;
   breathingTimer.textContent = timeLeft;
 
-  breathingInterval = setInterval(function () {
+  breathingInterval = setInterval(() => {
     timeLeft--;
     breathingTimer.textContent = timeLeft;
 
@@ -76,7 +96,6 @@ function startBreathingExercise() {
         clearInterval(breathingInterval);
         breathingInstruction.textContent = "Breathing exercise complete.";
         breathingTimer.textContent = "--";
-        startBreathingBtnTimer.disabled = false;
         pauseBreathingBtn.style.display = "none";
         resumeBreathingBtn.style.display = "none";
         stopBreathingBtn.style.display = "inline-block";
@@ -85,7 +104,6 @@ function startBreathingExercise() {
     }
   }, 1000);
 
-  // Toggle buttons
   startBreathingBtnTimer.style.display = "none";
   pauseBreathingBtn.style.display = "inline-block";
   stopBreathingBtn.style.display = "inline-block";
@@ -96,8 +114,7 @@ function startBreathingExercise() {
   isPaused = false;
 }
 
-// Pause
-pauseBreathingBtn.addEventListener('click', function () {
+pauseBreathingBtn.addEventListener('click', () => {
   clearInterval(breathingInterval);
   pauseBreathingBtn.style.display = "none";
   resumeBreathingBtn.style.display = "inline-block";
@@ -105,9 +122,8 @@ pauseBreathingBtn.addEventListener('click', function () {
   isBreathing = false;
 });
 
-// Resume
-resumeBreathingBtn.addEventListener('click', function () {
-  breathingInterval = setInterval(function () {
+resumeBreathingBtn.addEventListener('click', () => {
+  breathingInterval = setInterval(() => {
     timeLeft--;
     breathingTimer.textContent = timeLeft;
 
@@ -134,40 +150,27 @@ resumeBreathingBtn.addEventListener('click', function () {
   isBreathing = true;
 });
 
-// Stop
-stopBreathingBtn.addEventListener('click', function () {
+stopBreathingBtn.addEventListener('click', () => {
   clearInterval(breathingInterval);
   breathingTimer.textContent = "--";
   breathingInstruction.textContent = "Click 'Start' to begin again.";
-
   pauseBreathingBtn.style.display = "none";
   resumeBreathingBtn.style.display = "none";
   stopBreathingBtn.style.display = "none";
-
-  // Show start and end buttons
   startBreathingBtnTimer.style.display = "inline-block";
   endBreathingBtn.style.display = "inline-block";
-
   isBreathing = false;
   isPaused = false;
   currentStep = 0;
 });
 
-// End
-endBreathingBtn.addEventListener('click', function () {
+endBreathingBtn.addEventListener('click', () => {
   breathingSection.style.display = "none";
-  startBreathingBtn.style.display = "inline-block"; // Show feature card button again
+  startBreathingBtn.style.display = "inline-block";
   endBreathingBtn.style.display = "none";
-
-  // Reset everything
   breathingTimer.textContent = "--";
   breathingInstruction.textContent = "Click 'Start Breathing Exercise' to begin.";
   currentStep = 0;
   isBreathing = false;
   isPaused = false;
-});
-
-// Visuals
-viewVisualsBtn.addEventListener('click', function () {
-  alert("Visuals will be displayed here!");
 });
