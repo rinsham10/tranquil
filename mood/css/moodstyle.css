@@ -234,3 +234,32 @@ footer p {
     opacity: 1;
   }
 }
+
+/* Mood Feature Links Container */
+.mood-feature-links-container {
+  display: flex;
+  justify-content: space-around; /* Space out the links */
+  margin-top: 2rem;
+  padding: .25rem;
+  background-color: transparent; /* No background, blending with the page */
+  border-radius: 10;
+  box-shadow: none; /* No shadow, making them blend in */
+}
+
+/* Individual Links */
+.mood-feature-link {
+  color: #B2183A; /* Matching red color for text */
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition on hover */
+  padding: 0.5rem 1rem; /* Light padding */
+}
+
+/* Hover Effect */
+.mood-feature-link:hover {
+  color: #000000; /* White color on hover */
+  transform: translateY(-3px); /* Slight lift effect */
+  text-decoration: underline; /* Add underline on hover */
+}
+
