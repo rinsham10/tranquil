@@ -20,6 +20,7 @@
         width: 100%;
         z-index: -1;
       }
+
       @keyframes gradient {
         0% {
           background-position: 0%;
@@ -27,6 +28,14 @@
         100% {
           background-position: 100%;
         }
+      }
+
+      /* Fullscreen Modal for Visuals */
+      #visualsModal {
+        background-image: url('assets/relaxation.gif'); /* Replace with your own relaxing visual image/gif */
+        background-size: cover;
+        background-position: center;
+        display: none;
       }
     </style>
   </head>
@@ -76,21 +85,27 @@
         </div>
       </div>
     </section>
-  
-  <!-- Breathing Exercise Section (Initially Hidden) -->
-<div id="breathingSection" class="mt-10 text-center" style="display: none;">
-  <h3 class="text-2xl font-semibold text-[#B2183A] mb-4">Guided Breathing</h3>
-  <p id="breathingInstruction" class="text-gray-700 mb-4">Click "Start Breathing Exercise" to begin.</p>
-  <p id="breathingTimer" class="text-4xl font-bold text-[#B2183A] mb-4">--</p>
-  <div>
-    <button id="startBreathingBtnTimer" class="bg-[#B2183A] text-white py-2 px-4 rounded mb-2">Start</button>
-    <button id="pauseBreathingBtn" class="bg-[#ED4A69] text-white py-2 px-4 rounded mb-2 hidden">Pause</button>
-    <button id="stopBreathingBtn" class="bg-[#4CAF50] text-white py-2 px-4 rounded mb-2 hidden">Stop</button>
-    <button id="resumeBreathingBtn" class="bg-[#FFD700] text-white py-2 px-4 rounded mb-2 hidden">Resume</button> <!-- Resume Button -->
-  </div>
+
+    <!-- Breathing Exercise Section -->
+    <div id="breathingSection" class="mt-10 text-center" style="display: none;">
+      <h3 class="text-4xl font-semibold text-[#B2183A] mb-4">Guided Breathing</h3>
+      <p id="breathingInstruction" class="text-2xl text-gray-700 mb-4">Click "Start Breathing Exercise" to begin.</p>
+      <p id="breathingTimer" class="text-4xl font-bold text-[#B2183A] mb-4">--</p>
+      <!-- Inside the Breathing Exercise Section -->
+<div>
+  <button id="startBreathingBtnTimer" class="bg-[#B2183A] text-white py-2 px-4 rounded mb-2">Start</button>
+  <button id="pauseBreathingBtn" class="bg-[#ED4A69] text-white py-2 px-4 rounded mb-2 hidden">Pause</button>
+  <button id="stopBreathingBtn" class="bg-[#4CAF50] text-white py-2 px-4 rounded mb-2 hidden">Stop</button>
+  <button id="resumeBreathingBtn" class="bg-[#FFD700] text-white py-2 px-4 rounded mb-2 hidden">Resume</button>
+  <button id="endBreathingBtn" class="bg-[#6B7280] text-white py-2 px-4 rounded mb-2 hidden">End</button> <!-- New button -->
 </div>
+    </div>
 
-
+    <!-- Relaxation Visuals Modal -->
+    <div id="visualsModal" class="fixed top-0 left-0 w-full h-full z-50 flex items-center justify-center">
+      <button id="closeVisualsBtn" class="absolute top-5 right-5 bg-white text-[#B2183A] px-4 py-2 rounded shadow-md font-semibold">Close</button>
+    </div>
+<br><br><br><br><br><br><br>
     <script src="mindfulness.js"></script>
   </body>
 </html>

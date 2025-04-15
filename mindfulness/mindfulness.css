@@ -129,3 +129,22 @@ body {
     width: 100%;
     left: 0;
   }
+
+  
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3c8c8;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #B2183A;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(246, 0, 0, 0.603);  /* Soft pinkish lavender on hover */
+}
