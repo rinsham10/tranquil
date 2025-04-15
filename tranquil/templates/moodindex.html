@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,13 +11,12 @@
   <!-- Fonts & Tailwind CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  <script src="mood.js" defer></script>
+  <script src="{% static 'js/mood.js' %}" defer></script>
   <!-- Custom Styles -->
-  <link rel="stylesheet" href="css/moodstyle.css" />
+  <link rel="stylesheet" href="{% static 'css/moodstyle.css' %}"/>
 </head>
 
 <body class="font-[Poppins] bg-[#FBF8FB] text-gray-800">
-
   <!-- Background Decorative Elements -->
   <div class="background-decor blob1"></div>
   <div class="background-decor blob2"></div>
@@ -26,9 +27,13 @@
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
       <h1 class="text-2xl font-bold text-[#B2183A]">Tranquil</h1>
       <nav class="space-x-6">
-        <a href="../index.html#home" class="hover:text-[#ED4A69] font-medium">HOME</a>
-        <a href="../index.html#features" class="hover:text-[#ED4A69] font-medium">FEATURES</a>
-        <a href="../index.html#about" class="hover:text-[#ED4A69] font-medium">ABOUT</a>
+        <nav class="space-x-6">
+          <a href="{% url 'index' %}" class="hover:text-[#ED4A69] font-medium" >HOME</a>
+          <a href="{% url 'index' %}#features" class="hover:text-[#ED4A69] font-medium">FEATURES</a>
+          <a href="{% url 'index' %}#about" class="hover:text-[#ED4A69] font-medium">ABOUT</a>
+        </nav>
+        
+        
       </nav>
     </div>
   </header>
@@ -92,8 +97,8 @@
     </div>
 <br>
     <div class="mood-feature-links-container">
-      <a href="../journal/journal.html" class="mood-feature-link">Write in Your Journal</a>
-      <a href="../mindfulness/mindfulness.html" class="mood-feature-link">Explore Mindfulness</a>
+      <a href="{% url 'journal' %}" class="mood-feature-link">Write in Your Journal</a>
+      <a href="{% url 'mindfulness' %}" class="mood-feature-link">Explore Mindfulness</a>
     </div>
 
     

@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,10 +14,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">  <!-- Link to Font Awesome -->
   
   <!-- Custom Styles -->
-  <link rel="stylesheet" href="css/journal.css" />
+  <link rel="stylesheet" href="{% static 'css/journal.css' %}">
+
   
   <!-- JavaScript for Journal Page -->
-  <script src="journal.js" defer></script>
+  <script src="{% static 'js/journal.js' %}" defer></script>
+
 </head>
 
 <body class="font-[Poppins] bg-[#FBF8FB] text-gray-800">
@@ -25,9 +29,9 @@
     <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
       <h1 class="text-2xl font-bold text-[#B2183A]">Tranquil</h1>
       <nav class="space-x-6">
-        <a href="../index.html#home" class="hover:text-[#ED4A69] font-medium">HOME</a>
-        <a href="../index.html#features" class="hover:text-[#ED4A69] font-medium">FEATURES</a>
-        <a href="../index.html#about" class="hover:text-[#ED4A69] font-medium">ABOUT</a>
+        <a href="{% url 'index' %}" class="hover:text-[#ED4A69] font-medium" >HOME</a>
+        <a href="{% url 'index' %}#features" class="hover:text-[#ED4A69] font-medium">FEATURES</a>
+        <a href="{% url 'index' %}#about" class="hover:text-[#ED4A69] font-medium">ABOUT</a>
       </nav>
     </div>
   </header>
@@ -55,7 +59,7 @@
     </section>
   </main>
 
-  <script src="journal.js"></script>
+  <script src="{% static 'js/journal.js' %}"></script>
 </body>
 
 </html>

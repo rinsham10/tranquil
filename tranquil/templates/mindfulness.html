@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <link rel="stylesheet" href="mindfulness.css" />
+    <link rel="stylesheet" href="{% static 'css/mindfulness.css' %}"/>
     <style>
       .background--custom {
         background: linear-gradient(90deg, #FBF8FB, #B2183A, #f5a2a1);
@@ -43,9 +45,9 @@
       <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <h1 class="text-2xl font-bold text-[#B2183A]">Tranquil</h1>
         <nav class="space-x-6">
-          <a href="../index.html#home" class="hover:text-[#ED4A69] font-medium">HOME</a>
-          <a href="../index.html#features" class="hover:text-[#ED4A69] font-medium">FEATURES</a>
-          <a href="../index.html#about" class="hover:text-[#ED4A69] font-medium">ABOUT</a>
+          <a href="{% url 'index' %}" class="hover:text-[#ED4A69] font-medium" >HOME</a>
+          <a href="{% url 'index' %}#features" class="hover:text-[#ED4A69] font-medium">FEATURES</a>
+          <a href="{% url 'index' %}#about" class="hover:text-[#ED4A69] font-medium">ABOUT</a>
         </nav>
       </div>
     </header>
@@ -99,7 +101,7 @@
       <h3 class="text-4xl font-semibold text-[#B2183A] mb-4">Relaxing Music</h3>
       <p class="text-2xl text-gray-700 mb-4">Enjoy calming sounds to ease your mind.</p>
       <audio id="relaxingAudio" controls class="mx-auto mb-4">
-        <source src="assets/relax.mp3" type="audio/mpeg" />
+        <source src="{% static 'audio/relax.mp3' %}" type="audio/mpeg" />
         Your browser does not support the audio element.
       </audio>
       <div>
@@ -151,6 +153,6 @@
   <!-- Display the current audio recommendation name -->
   <p id="audioRecommendationText" class="text-xl text-gray-700 mt-6"></p>
 </section>
-<script src="mindfulness.js"></script>
+<script src="{% static 'js/mindfulness.js' %}"></script>
 </body>
 </html>
