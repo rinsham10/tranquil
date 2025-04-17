@@ -5,184 +5,188 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'users/css/login-style.css' %}">
     <style>
-        :root {
-            /* Agricultural color scheme */
-            --primary-color: #4CAF50;
-            --primary-dark: #388E3C;
-            --primary-light: #A5D6A7;
-            --text-color: #333;
-            --light-text: #fff;
-            --bg-color: #f0f2f5;
-            --error-color: #e53935;
-        }
+       :root {
+    /* New Color Palette */
+    --primary-color: #b21831;   /* Dark Red */
+    --primary-dark: #ed4a69;    /* Lighter Red */
+    --primary-light: #fbf8fb;   /* Very Light Pink */
+    --text-color: #333;         /* Dark Gray */
+    --light-text: #fff;         /* White */
+    --bg-color: #fbb3c8;        /* Light Pink */
+    --error-color: #e53935;     /* Red */
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-        body {
-            background-color: var(--bg-color);
-            height: 100vh;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+body {
+    background-color: var(--bg-color);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-        .page-container {
-            display: flex;
-            width: 80%;
-            height: 80vh;
-            max-width: 1200px;
-            max-height: 700px;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-        }
+.page-container {
+    display: flex;
+    width: 80%;
+    height: 80vh;
+    max-width: 1200px;
+    max-height: 700px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
 
-        .image-section {
-            flex: 1.5;
-            background-image: url("{% static 'images/login.png' %}" );
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
+.image-section {
+    flex: 1.5;
+    background-image: url("{% static 'images/login1.png' %}");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
 
-        .image-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 20px;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-            color: white;
-        }
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    color: white;
+}
 
-        .image-overlay h2 {
-            font-size: 1.8rem;
-            margin-bottom: 8px;
-        }
+.image-overlay h2 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
 
-        .image-overlay p {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
+.image-overlay p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
 
-        .form-section {
-            flex: 1;
-            background-color: white;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-        }
+.form-section {
+    flex: 1;
+    background-color: white;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
 
-        .form-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+.form-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-        h1 {
-            color: var(--primary-dark);
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 30px;
-        }
+h1 {
+    color: var(--primary-dark);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
 
-        .form-container {
-            width: 100%;
-        }
+.form-container {
+    width: 100%;
+}
 
-        .input-group {
-            margin-bottom: 15px;
-            position: relative;
-        }
+.input-group {
+    margin-bottom: 15px;
+    position: relative;
+}
 
-        .input-group input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-        }
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ff0000;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    background-color: #fbf8fb; /* Light pink background */
+    transition: all 0.3s;
+}
 
-        .input-group input:focus {
-            border-color: var(--primary-color);
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
-        }
+.input-group input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(178, 24, 49, 0.2); /* Dark Red */
+    background-color: #fbb3c8; /* Slightly darker pink when focused */
+}
 
-        .error {
-            color: var(--error-color);
-            font-size: 0.8rem;
-            margin-top: 3px;
-            display: none;
-        }
 
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: var(--light-text);
-            border: none;
-            padding: 12px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.95rem;
-            width: 100%;
-            transition: background-color 0.3s;
-            font-weight: 500;
-            margin-top: 10px;
-        }
+.error {
+    color: var(--error-color);
+    font-size: 0.8rem;
+    margin-top: 3px;
+    display: none;
+}
 
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-        }
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    width: 100%;
+    transition: background-color 0.3s;
+    font-weight: 500;
+    margin-top: 10px;
+}
 
-        .form-link {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 0.9rem;
-            color: var(--text-color);
-        }
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
 
-        .form-link a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
+.form-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
 
-        .form-link a:hover {
-            text-decoration: underline;
-        }
+.form-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
 
-        .messages {
-            margin-top: 15px;
-            padding: 8px;
-            background-color: rgba(229, 57, 53, 0.1);
-            border-radius: 4px;
-            font-size: 0.85rem;
-        }
+.form-link a:hover {
+    text-decoration: underline;
+}
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .page-container {
-                flex-direction: column;
-                height: auto;
-                width: 90%;
-            }
-            
-            .image-section {
-                height: 200px;
-                flex: none;
-            }
-            
-            .form-section {
-                padding: 25px 20px;
-            }
-        }
+.messages {
+    margin-top: 15px;
+    padding: 8px;
+    background-color: rgba(229, 57, 53, 0.1); /* Light Red */
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .page-container {
+        flex-direction: column;
+        height: auto;
+        width: 90%;
+    }
+
+    .image-section {
+        height: 200px;
+        flex: none;
+    }
+
+    .form-section {
+        padding: 25px 20px;
+    }
+}
+
     </style>
 </head>
 <body>
