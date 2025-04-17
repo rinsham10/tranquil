@@ -1,77 +1,88 @@
-/* Overlay background for hero section */
-.home::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom right, #FBB3C8, #FBF8FB);
-    opacity: 0.08; /* lower opacity for less white overlay */
-    z-index: 1;
-  }
-  
+/* Ensure the navbar stays on top of all other content */
+header {
+  z-index: 100;
+}
 
-  
-  /* Body and Font */
-  body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #FBF8FB;
-    text-align: center;
+/* Navbar Styling */
+nav a {
+  position: relative;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+}
+
+nav a::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #B2183A; /* Red underline */
+  bottom: 0;
+  left: 50%;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav a:hover {
+  color: #B2183A; /* Change color on hover */
+}
+
+nav a:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+/* Fixing the z-index of navbar */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff; /* Add background color for better visibility */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for the navbar */
+  z-index: 100; /* Ensuring the navbar is on top */
+}
+
+/* The rest of the body and font styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #FBF8FB;
+  text-align: center;
+}
+
+/* Hero Section */
+.home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom right, #FBB3C8, #FBF8FB);
+  opacity: 0.08; /* Lower opacity for less white overlay */
+  z-index: 1;
+}
+
+.home {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 94.5vh;
+  min-height: 600px;
+  position: relative;
+}
+
+/* Hero content stays above overlay */
+.home > * {
+  z-index: 10;
+  position: relative;
+}
+
+/* Hero content animation */
+.home h1, .home p {
+  animation: fadeInUp 1.5s ease-out forwards;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* Navbar Styling */
-  nav a {
-    position: relative;
-    font-weight: 500;
-    transition: color 0.3s ease-in-out;
-  }
-  
-  nav a::before {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background-color: #B2183A;
-    bottom: 0;
-    left: 50%;
-    transition: width 0.3s ease, left 0.3s ease;
-  }
-  
-  nav a:hover {
-    color: #B2183A;
-  }
-  
-  nav a:hover::before {
-    width: 100%;
-    left: 0;
-  }
-  
-  /* Hero Section Animation */
-  .home h1, .home p {
-    animation: fadeInUp 1.5s ease-out forwards;
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  
-  @keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-  }
-  
-  /* Ensures hero content stays above overlay */
-  .home > * {
-    z-index: 10;
-    text-shadow: 3px 3px 8px rgba(255, 0, 0, 0.3);
-    position: relative;
-  }
-  
-  /* Hero image sizing (full screen) */
-  .home {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 94.5vh;
-    min-height: 600px;
-  }
-  
-  
+}

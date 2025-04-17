@@ -8,27 +8,36 @@
     <link rel="stylesheet" href="{% static 'users/css/login-style.css' %}">
     <style>
         :root {
-            --primary-color: #4CAF50;
-            --secondary-color: #2E7D32;
-            --background-color: #F9FFF9;
-            --error-color: #E57373;
+            --primary-color: #b21831;
+            --secondary-color: #ed4a69;
+            --background-color: #fbf8fb;
+            --error-color: #fbb3c8;
             --text-color: #333333;
             --border-radius: 8px;
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-
+    
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             min-height: 100vh;
-            background-image: url('{% static "users/images/agriculture-pattern.png" %}');
-            background-size: 300px;
+            background-image: url('{% static 'images/backg.png' %}');
+            background-size: cover;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-
+        body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5); /* White overlay with 50% opacity */
+    pointer-events: none; /* Allow interaction with other elements */
+}
         .form-container {
             background-color: rgba(255, 255, 255, 0.7);
             border-radius: var(--border-radius);
@@ -41,19 +50,19 @@
             max-width: 500px;
             margin: 40px 20px;
         }
-
+    
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
+    
         h1 {
             color: var(--secondary-color);
             margin: 0 0 10px 0;
             font-size: 24px;
             text-align: center;
         }
-
+    
         input {
             display: block;
             width: 100%;
@@ -66,22 +75,22 @@
             box-sizing: border-box;
             background-color: rgba(255, 255, 255, 0.8);
         }
-
+    
         input:focus {
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.25);
+            box-shadow: 0 0 0 2px rgba(178, 24, 49, 0.25);
             outline: none;
         }
-
+    
         .input-group {
             position: relative;
             margin-bottom: 20px;
         }
-
+    
         .input-group input {
             margin-bottom: 5px;
         }
-
+    
         .error {
             color: var(--error-color);
             font-size: 14px;
@@ -89,13 +98,13 @@
             display: none;
             animation: shake 0.5s ease;
         }
-
+    
         @keyframes shake {
             0%, 100% { transform: translateX(0); }
             20%, 60% { transform: translateX(-5px); }
             40%, 80% { transform: translateX(5px); }
         }
-
+    
         .btn-primary {
             background-color: var(--primary-color);
             color: white;
@@ -109,44 +118,44 @@
             transition: all 0.3s ease;
             margin-top: 10px;
         }
-
+    
         .btn-primary:hover {
             background-color: var(--secondary-color);
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-
+    
         .btn-primary:active {
             transform: translateY(0);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-
+    
         .form-link {
             text-align: center;
             margin-top: 20px;
             color: var(--text-color);
         }
-
+    
         .form-link a {
             color: var(--primary-color);
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
         }
-
+    
         .form-link a:hover {
             color: var(--secondary-color);
             text-decoration: underline;
         }
-
+    
         .messages {
-            background-color: rgba(229, 115, 115, 0.1);
+            background-color: rgba(251, 179, 200, 0.1);
             border-left: 4px solid var(--error-color);
             padding: 10px 15px;
             margin-top: 20px;
             border-radius: 4px;
         }
-
+    
         .valid-icon {
             position: absolute;
             right: 10px;
@@ -154,7 +163,7 @@
             color: var(--primary-color);
             display: none;
         }
-
+    
         /* Progress indicator */
         .progress-container {
             margin: 20px 0;
@@ -164,21 +173,21 @@
             width: 100%;
             overflow: hidden;
         }
-
+    
         .progress-bar {
             height: 100%;
             width: 0%;
             background-color: var(--primary-color);
             transition: width 0.3s ease;
         }
-
+    
         .tagline {
             color: var(--text-color);
             font-size: 18px;
             margin: 0 0 30px 0;
             text-align: center;
         }
-
+    
         /* Loading spinner for submit button */
         .loading-spinner {
             display: inline-block;
@@ -190,21 +199,22 @@
             animation: spin 1s linear infinite;
             margin-right: 8px;
         }
-
+    
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
-
+    
         /* Highlight error fields */
         .highlight-error {
             animation: pulse 0.5s ease;
         }
-
+    
         @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(229, 115, 115, 0.5); }
-            50% { box-shadow: 0 0 0 5px rgba(229, 115, 115, 0.5); }
+            0%, 100% { box-shadow: 0 0 0 0 rgba(251, 179, 200, 0.5); }
+            50% { box-shadow: 0 0 0 5px rgba(251, 179, 200, 0.5); }
         }
     </style>
+    
 </head>
 <body>
     <div class="form-container">

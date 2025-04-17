@@ -7,7 +7,7 @@ class CustomUserAdmin(UserAdmin):
 
     fieldsets = (
         (None, {"fields": ("username", "password")}),
-        ("Personal Info", {"fields": ("full_name", "email", "mobile")}),
+        ("Personal Info", {"fields": ("full_name", "mobile")}),
         ("Permissions", {"fields": ("is_active", "is_staff", "is_superuser", "groups", "user_permissions")}),
         ("Important dates", {"fields": ("last_login", "date_joined")}),
     )
@@ -15,12 +15,12 @@ class CustomUserAdmin(UserAdmin):
     add_fieldsets = (
         (None, {
             "classes": ("wide",),
-            "fields": ("username", "full_name", "email", "mobile", "password1", "password2"),
+            "fields": ("username", "full_name", "mobile", "password1", "password2"),
         }),
     )
 
-    list_display = ("username", "full_name", "email", "mobile", "is_staff", "is_active")
-    search_fields = ("username", "full_name", "email", "mobile")
+    list_display = ("username", "full_name", "mobile", "is_staff", "is_active")
+    search_fields = ("username", "full_name", "mobile")
     ordering = ("username",)
 
 admin.site.register(CustomUser, CustomUserAdmin)
