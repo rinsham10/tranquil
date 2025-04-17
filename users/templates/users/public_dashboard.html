@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Tranquil - Your Mental Health Companion</title>
+  
+    <!-- External font and stylesheets -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+    <!-- Your local static CSS file -->
+    <link rel="stylesheet" href="{% static 'users/css/public-style.css' %}" />
+  </head>
+</head>
+<body class="bg-[#FBF8FB] text-[#3F1A2B]">
+    <div class="bg-[#FBF8FB] text-[#3F1A2B] min-h-screen flex flex-col w-full overflow-x-hidden">
+        <body class="overflow-x-hidden">
+
+
+  <!-- Navbar -->
+  <header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-[#B2183A]">Tranquil</h1>
+      <nav class="space-x-6">
+        <a href="{% url 'login' %}" class="hover:text-[#ED4A69] font-medium" >LOGIN</a>
+      </nav>
+    </div>
+  </header>
+
+ <!-- Hero Section -->
+<section class="home relative h-screen bg-cover bg-center flex items-center justify-center text-center text-white" style="background-image: url('{% static "images/health11.png" %}');">
+  <div class="z-10 px-6">
+    <h1 class="text-5xl md:text-5xl lg:text-6xl font-extrabold mb-6 drop-shadow-xl">
+      YOUR MENTAL HEALTH COMPANION
+    </h1>
+    <p class="text-lg md:text-2xl font-medium drop-shadow-lg">
+      Find peace, journal your journey, and breathe easier with Tranquil.
+    </p>
+  </div>
+</section>
+
+
+</body>
+</html>

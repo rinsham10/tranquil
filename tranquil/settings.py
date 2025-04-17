@@ -64,9 +64,13 @@ TEMPLATES = [
 WSGI_APPLICATION = 'tranquil.wsgi.application'
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+     'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME':'tranquil_db',
+        'USER': 'postgres',       # Your database user
+        'PASSWORD': '12345',   # Your database password
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -106,3 +110,13 @@ STATICFILES_DIRS = [
 
 # Optional: If you have static files in app-specific directories
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Redirects Django's default login URL to your custom login page
+LOGIN_URL = '/users/login/'
+LOGIN_REDIRECT_URL = '/'  # This sends users to home page after successful login
+LOGOUT_REDIRECT_URL = '/'  # Optional, where users go after logout
+
+
+AUTH_USER_MODEL = 'users.CustomUser'
