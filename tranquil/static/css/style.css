@@ -240,3 +240,73 @@ section {
 html {
   scroll-behavior: smooth;
 }
+
+/* Chatbox container */
+#chatbox {
+  width: 100%;
+  height: 400px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f9f9f9;
+  overflow-y: scroll;
+  margin-bottom: 20px;
+}
+
+/* Individual message */
+#chatbox div {
+  margin-bottom: 10px;
+}
+
+/* Style for user messages */
+#chatbox .user-message {
+  color: #000;
+}
+
+/* Style for bot messages */
+#chatbox .bot-message {
+  color: #007BFF;
+}
+
+/* Input box */
+#user-input {
+  width: calc(100% - 80px);
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Send button */
+#send-btn {
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  width: 60px;
+}
+
+/* Send button on hover */
+#send-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Style for user messages */
+.you-message {
+  text-align: right;
+  color: #000;
+  background-color: #f0f0f0;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+/* Style for bot messages */
+.bot-message {
+  text-align: left;
+  color: #007BFF;
+  background-color: #f0f8ff;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+}

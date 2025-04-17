@@ -130,6 +130,19 @@
     </div>
   </section>
   
+<!-- Chatbot Section -->
+<div id="chatbot">
+  <h3>Chat with Tranquil Bot</h3>
+  <div id="chatbox" style="border: 1px solid #ccc; padding: 10px; height: 200px; overflow-y: scroll;">
+    <!-- Messages will appear here -->
+  </div>
+  <input type="text" id="user-input" placeholder="Type your message..." />
+  <button onclick="sendMessage()">Send</button>
+</div>
+
+<!-- Link your JavaScript -->
+<script src="{% static 'chatbotapp/script.js' %}"></script>
+
   
   <!-- About Section -->
   <section id="about" class="py-20" style="background-color: #fdf4f7;">
@@ -164,7 +177,9 @@
 <footer class="bg-[#3F1A2B] text-white text-center py-6 relative z-10">
     <p class="text-sm md:text-base">&copy; 2025 Tranquil. Your safe space for mental wellness</p>
   </footer>
-  
+  <script src="{% static 'js/script.js' %}"></script>
+
+
 
 </body>
 </html>

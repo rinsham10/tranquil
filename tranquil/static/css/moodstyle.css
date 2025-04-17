@@ -89,7 +89,7 @@ nav a:hover::before {
 .mood-btn:hover {
   transform: translateY(-7px); /* More pronounced hover effect */
   box-shadow: 8px 8px 20px rgba(237, 74, 105, 0.15);
-  background-color: #fbd4db; /* Soft background color change on hover */
+  background-color: #000000; /* Soft background color change on hover */
 }
 
 .mood-btn span {
@@ -109,7 +109,7 @@ nav a:hover::before {
 }
 
 .mood-btn.bg-white:hover {
-  background-color: #edd7df;
+  background-color: #b218399e;
 }
 
 .mood-btn .icon {
