@@ -9,4 +9,5 @@ urlpatterns = [
     path('journal/', views.journal_index, name='journal'),
     path('mindfulness/', views.mindfulness_index, name='mindfulness'),
     path('chatbot/', include('chatbotapp.urls')),
+    path('auth/', include('users.urls')),
 ]
