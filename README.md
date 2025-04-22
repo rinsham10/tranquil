@@ -1,7 +1,7 @@
 # Tranquil 
 A mental wellness companion web app 
 
-Live Site: https://rinsham10.github.io/tranquil/
+##Live Site: https://rinsham10.github.io/tranquil/
 
 ## Features
 - Relaxation guides
